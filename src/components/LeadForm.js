@@ -41,7 +41,8 @@ const LeadForm = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post("/api/leads", formData);
+      const API_BASE = process.env.REACT_APP_API_BASE_URL;
+      const response = await axios.post(`${API_BASE}/api/leads`, formData);
 
       if (response.data.success) {
         setSubmitSuccess(true);
